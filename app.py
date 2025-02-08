@@ -16,6 +16,8 @@ app.secret_key = os.environ.get('FLASK_SECRET_KEY', 'your_secret_key')  # Use en
 
 # Initialize the db
 db.init_app(app)
+for key, value in os.environ.items():
+    print(f"{key}: {value}")
 
 # Create a flag to check if it's the first request
 is_first_request = True
@@ -187,5 +189,6 @@ def logout():
 
 # Run the app
 if __name__ == '__main__':
+
     port = int(os.environ.get('PORT', 5000))
     app.run(debug=True, port=port, host='localhost')
