@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Finder</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+        #recipes-container, #substitute-container {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        .recipe, .substitute {
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #fff;
+        }
+        .recipe h4, .substitute p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Recipe Finder</h1>
+
+    <!-- Ingredient Form -->
+    <form id="ingredient-form">
+        <label for="ingredients">Enter ingredients (comma-separated):</label>
+        <input type="text" id="ingredients" name="ingredients" required>
+        <button type="submit">Find Recipes</button>
+    </form>
+
+    <!-- Recipes Container -->
+    <div id="recipes-container">
+        <p>No recipes to display. Enter ingredients to find recipes!</p>
+    </div>
+
+    <h2>Find Ingredient Substitutes</h2>
+
+    <!-- Ingredient Substitution -->
+    <label for="substitute-ingredient">Enter an ingredient:</label>
+    <input type="text" id="substitute-ingredient" name="substitute-ingredient">
+    <button id="get-substitute">Get Substitute</button>
+
+    <!-- Substitute Container -->
+    <div id="substitute-container">
+        <p>No substitutes to display. Enter an ingredient to find substitutes!</p>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

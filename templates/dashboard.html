@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">  
+    <title>Dashboard</title>
+</head>
+<body>
+    <h1>Welcome, {{ user.username }}!</h1>
+    <p><a href="{{ url_for('logout') }}">Logout</a></p>
+
+    <header>
+        <img src="https://images.all-free-download.com/images/graphicwebp/cooking_recipes_banner_female_cook_food_icons_decor_6837481.webp" alt="kitchen-icon" class="kitchen-icon">
+        <h1>RecipeMatch</h1>
+        <p>Find recipes based on the ingredients you have!</p>
+    </header>
+    
+    <main>
+        <section class="search-section">
+            <h2>Search Recipes</h2>
+            <form id="ingredient-form">
+                <label for="ingredients">Enter Ingredients (comma separated):</label>
+                <input type="text" id="ingredients" name="ingredients" placeholder="e.g., eggs, flour, sugar">
+                <button type="submit">Find Recipes</button>
+            </form>
+        </section>
+
+        <section class="icon-section">
+        </section>
+
+        <div id="content">
+            <h2>Find Recipes by Ingredients</h2>
+            <form id="ingredient-form">
+                <label for="ingredients">Enter Ingredients (comma-separated):</label>
+                <input type="text" id="ingredients" name="ingredients" required>
+                <button type="submit">Find Recipes</button>
+            </form>
+    
+            <div id="recipes-container">
+                <!-- Recipes will be displayed here -->
+            </div>
+    
+            <h2>Substitute Ingredients</h2>
+            <input type="text" id="substitute-ingredient" placeholder="Enter ingredient to substitute">
+            <button id="get-substitute">Find Substitute</button>
+            <div id="substitute-container">
+                <!-- Ingredient substitutes will be displayed here -->
+            </div>
+        </div>
+        
+        <section class="results-section">
+            <h2>Results</h2>
+            <div id="results-container">
+                <!-- Recipes will be dynamically added here -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>RecipeMatch &copy; 2025</p>
+    </footer>
+
+    <script src="static/app.js"></script>  
+
+</body>
+</html>

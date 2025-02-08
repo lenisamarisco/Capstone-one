@@ -1,0 +1,161 @@
+/* General reset and global styles */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #f8f9fa;
+  color: #343a40;
+}
+
+/* App container */
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Header styles */
+header {
+  display: flex;
+  justify-content: center; /* Center the header content */
+  align-items: center;
+  background-color: #ea7508;
+  color: white;
+  padding: 20px 20px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  position: relative;
+  flex-direction: column; /* Stack the logo and text vertically */
+}
+
+header .logo {
+  display: flex;
+  align-items: center;
+  position: absolute; /* Keeps the logo fixed at the top-left */
+  top: 20px; /* Adjust spacing from the top */
+  left: 20px; /* Adjust spacing from the left */
+}
+
+header .logo img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+
+header .header-text {
+  text-align: center; /* Centers the title and tagline */
+  z-index: 1; /* Ensures the text is on top */
+}
+
+header .title {
+  font-size: 2rem; /* Slightly larger font for the title */
+  font-weight: bold;
+}
+
+header .tagline {
+  font-size: 1rem; /* Smaller font for the tagline */
+  font-weight: normal;
+  margin-top: 5px; /* Adds space between the title and tagline */
+}
+
+/* Footer styles */
+footer {
+  background-color: #343a40;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  margin-top: auto;
+}
+
+/* Main content styles */
+main {
+  padding: 20px;
+  flex-grow: 1;
+}
+
+/* Buttons */
+button {
+  background-color: #dc310b;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #b7313f;
+}
+
+/* Link styles */
+a {
+  color: #f30430;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Recipe list styles */
+.recipe-table {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+  gap: 20px; /* Space between cards */
+  margin-top: 20px;
+  padding: 0 20px; /* Optional: adds some padding on the left and right */
+}
+
+.recipe-card {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 350px; /* Adjust height for consistency */
+}
+
+.recipe-card img {
+  width: 100%;
+  height: 150px; /* Adjust height for consistency */
+  object-fit: cover;
+}
+
+.recipe-card .details {
+  padding: 10px;
+}
+
+.recipe-card h3 {
+  font-size: 1.25rem;
+  margin: 0 0 10px;
+}
+
+.recipe-card p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #6c757d;
+}
+
+/* Add responsive alignment for the recipe grid */
+@media (min-width: 768px) {
+  .recipe-list {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Adjust grid size for larger screens */
+  }
+}
+
+/* Kitchen Icon Styles */
+.kitchen-icon {
+  width: 195px; /* Adjust the size for the icon */
+  height: 195px; /* Keep it square */
+  border-radius: 10%; /* Rounded corners */
+  object-fit: cover; /* Prevent stretching */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Optional shadow */
+  position: absolute; /* Position it absolutely */
+  top: 20px; /* Add space from the top */
+  right: 20px; /* Align it to the right */
+}
