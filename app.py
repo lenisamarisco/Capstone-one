@@ -190,5 +190,5 @@ def logout():
 # Run the app
 if __name__ == '__main__':
 
-    port = int(os.environ.get('PORT', 5000))
-    app.run(debug=True, port=port, host='localhost')
+    # port = int(os.environ.get('PORT', 5000))
+    app.run(debug=True)
