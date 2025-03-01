@@ -1,1 +1,1 @@
-web: export FLASK_RUN_PORT=$PORT;flask run
+web: export FLASK_RUN_PORT=$PORT;gunicorn app:app
