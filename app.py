@@ -5,6 +5,9 @@ from flask import Flask, render_template, request, jsonify, redirect, url_for, s
 from werkzeug.security import generate_password_hash, check_password_hash
 from db import db  # Import db from db.py
 from models import Recipe, User  # Import models
+from dotenv import load_dotenv 
+
+load_dotenv()
 
 # Initialize the Flask app
 app = Flask(__name__)
@@ -54,9 +57,11 @@ def filter_recipes():
     ingredients = request.json['ingredients']
     
     # Retrieve your API keys from environment variables or configuration
-    EDAMAM_API_KEY = '872bd5bf6359ec9288249af806c13245'
-    EDAMAM_APP_ID = '63eba0ec'
-    SPOONACULAR_API_KEY = '808f16d500b342f2848e5cb957889554'
+    
+    
+    EDAMAM_API_KEY = os.getenv('EDAMAM_API_KEY')
+    EDAMAM_APP_ID = os.getenv('EDAMAM_APP_ID')
+    SPOONACULAR_API_KEY = os.getenv('SPOONACULAR_API_KEY')
 
     if not EDAMAM_API_KEY or not EDAMAM_APP_ID:
         return jsonify({'error': 'API keys are missing from environment variables'}), 400
@@ -145,7 +150,7 @@ def register():
         existing_user = User.query.filter_by(username=username).first()
         
         if existing_user:
-            return render_template('register.html', message="Username already exists")
+            return render_template('Register.html', message="Username already exists")
 
         # Create a new user
         new_user = User(username=username,password_hash= hashed_password, email=email)
@@ -154,7 +159,7 @@ def register():
         
         return redirect(url_for('login'))
 
-    return render_template('register.html')
+    return render_template('Register.html')
 
 # User login route
 @app.route('/login', methods=['GET', 'POST'])
@@ -188,7 +193,8 @@ def logout():
     return redirect(url_for('login'))
 
 # Run the app
-if __name__ == '__main__':
+# if __name__ == '__main__':
 
-    # port = int(os.environ.get('PORT', 5000))
-    app.run(debug=True)
+#     port = int(os.getenv('PORT', 33507))
+#     print([port,'port'])
+#     app.run(port=port)

@@ -52,7 +52,13 @@ header .title {
   font-size: 2rem; /* Slightly larger font for the title */
   font-weight: bold;
 }
+header > nav > ul {
+display: flex;
+flex-direction: row;
+gap: 10px;
+list-style-type: none;
 
+}
 header .tagline {
   font-size: 1rem; /* Smaller font for the tagline */
   font-weight: normal;
